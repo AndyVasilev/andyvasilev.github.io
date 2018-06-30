@@ -2030,6 +2030,10 @@ section:nth-child(2n+1)
 {
     background: #f8f8f8;
 }
+section:nth-last-child(2n+1)
+{
+    background: none;
+}
 section h2
 {
     font-size: 2.4em;
@@ -2056,6 +2060,11 @@ section h2
 section.first
 {
     padding: 1.5em 15px;
+}
+section.footer
+{
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .bg-gray
 {
@@ -2108,7 +2117,7 @@ section.first
     padding: 10px;
 
     border: 3px solid #ebebeb;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #fff;
 
     -ms-flex-wrap: wrap;
@@ -2121,8 +2130,6 @@ section.first
     .advantages
     {
         padding: 0;
-
-        border: none;
     }
 }
 .advantages__item
@@ -2150,10 +2157,14 @@ section.first
     .advantages__item
     {
         border-right: none;
-        border-bottom: 3px solid #f8f8f8;
+        border-bottom: 2px solid #ebebeb;
 
         -ms-flex-pack: start;
         justify-content: flex-start;
+    }
+    .advantages__item br
+    {
+        display: none;
     }
 }
 .advantages__item h3
@@ -2163,13 +2174,6 @@ section.first
 
     margin: .5em 0 0;
     margin-left: 20px;
-}
-@media (max-width: 414px)
-{
-    .advantages__item h3
-    {
-        font-size: 1em;
-    }
 }
 .advantages__item_title
 {
@@ -2218,6 +2222,19 @@ section.first
     -ms-flex-align: center;
     align-items: center;
 }
+@media (max-width: 414px)
+{
+    .important__content .block
+    {
+            flex-direction: column;
+
+        margin-left: 0;
+
+        -ms-flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
 .important__content .block:nth-of-type(2n)
 {
     margin-top: 15px;
@@ -2226,6 +2243,13 @@ section.first
 .important__content p
 {
     margin-left: 25px;
+}
+@media (max-width: 414px)
+{
+    .important__content p
+    {
+        margin-left: 0;
+    }
 }
 .important__content .number
 {
@@ -2243,6 +2267,14 @@ section.first
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+@media (max-width: 414px)
+{
+    .important__content .number
+    {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
 }
 .important__content .number::before
 {
@@ -2286,6 +2318,17 @@ section.first
 {
     background: url('/img/exclamation-triangle.svg') no-repeat;
 }
+@media (max-width: 414px)
+{
+    .important__info .important__type
+    {
+            flex-direction: column;
+
+        -ms-flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
 .important__info .important__type::before
 {
     background: url('/img/info-circle.svg') no-repeat;
@@ -2297,28 +2340,66 @@ section.first
 
     width: 100%;
     margin-top: 10px;
+    padding: 10px;
+
+    border: 3px solid #ebebeb;
+    border-radius: 6px;
+    background: #fff;
 
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-pack: center;
     justify-content: center;
 }
+@media (max-width: 414px)
+{
+    .items
+    {
+        padding: 0;
+    }
+}
 .items .item
 {
     display: -ms-flexbox;
     display: flex;
 
-    padding: 25px;
+    padding: 15px;
 
-    border-radius: 6px;
     background: #fff;
 
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+@media (max-width: 414px)
+{
+    .items .item
+    {
+        padding: 25px 15px;
+
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
 }
 .items .item:nth-child(2n)
 {
-    margin: 0 5px;
+    border-top: none;
+    border-right: 2px solid #ebebeb;
+    border-bottom: none;
+    border-left: 2px solid #ebebeb;
+}
+@media (max-width: 414px)
+{
+    .items .item:nth-child(2n)
+    {
+        border-top: 2px solid #ebebeb;
+        border-right: none;
+        border-bottom: 2px solid #ebebeb;
+        border-left: none;
+    }
 }
 .items .item__text
 {
@@ -2350,6 +2431,13 @@ section.first
 {
     font-size: 1.5em;
     font-weight: bold;
+}
+@media (max-width: 414px)
+{
+    .items .item__svg img
+    {
+        max-width: 100px;
+    }
 }
 .description
 {
@@ -2532,7 +2620,13 @@ header h1 .svg-key,
 }
 .gerb span .arrow-link
 {
+    width: 10px;
+    height: 10px;
+
+    transition: all .25s ease-out;
+
     opacity: .5;
+    background: url(/img/arrow.svg) no-repeat;
 }
 @media (max-width: 414px)
 {
@@ -2542,6 +2636,11 @@ header h1 .svg-key,
 
         margin-top: 5px;
     }
+}
+.gerb:hover .arrow-link
+{
+    opacity: 1;
+    background: url(/img/arrow-hover.svg) no-repeat;
 }
 .master
 {
@@ -2899,11 +2998,6 @@ nav
         opacity: 1;
     }
 }
-footer,
-.footer
-{
-    border-top: 1px solid #ebebeb;
-}
 footer__container,
 .footer__container
 {
@@ -2921,6 +3015,17 @@ footer__links,
 {
     display: -ms-flexbox;
     display: flex;
+}
+@media (max-width: 414px)
+{
+    footer__links,
+    .footer__links
+    {
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
 }
 footer__links li,
 .footer__links li
@@ -2948,6 +3053,14 @@ footer__links li::after,
 
     background: #a3a3a3;
 }
+@media (max-width: 414px)
+{
+    footer__links li::after,
+    .footer__links li::after
+    {
+        margin: 0 5px;
+    }
+}
 footer__links li:last-child::after,
 .footer__links li:last-child::after
 {
@@ -2957,6 +3070,46 @@ footer__links li span,
 .footer__links li span
 {
     color: #a3a3a3;
+}
+@media (max-width: 414px)
+{
+    footer__links li:nth-child(2)::after,
+    .footer__links li:nth-child(2)::after
+    {
+        display: none;
+    }
+    footer__links li:last-child,
+    .footer__links li:last-child
+    {
+        width: 100%;
+        margin-top: 10px;
+
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    footer__links li:last-child a,
+    .footer__links li:last-child a
+    {
+        font-size: 16px;
+
+        width: 100%;
+        padding: 10px;
+
+        text-align: center;
+        text-decoration: none;
+
+        color: #23b55d;
+        border: 2px solid #23b55d;
+        border-radius: 25px;
+    }
+}
+@media (max-width: 320px)
+{
+    footer__links li:nth-child(1)::after,
+    .footer__links li:nth-child(1)::after
+    {
+        display: none;
+    }
 }
 /*=== контекстный слой ===*/
 /*! hidden.less v0.0.1 | MIT License | github.com/paulradzkov/hidden.less */
