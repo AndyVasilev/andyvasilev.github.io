@@ -185,12 +185,12 @@
   box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5); }
 
 .twentytwenty-left-arrow {
-  border-right: 6px solid white;
+  border-right: 6px solid #ffb732;
   left: 50%;
   margin-left: -17px; }
 
 .twentytwenty-right-arrow {
-  border-left: 6px solid white;
+  border-left: 6px solid #ffb732;
   right: 50%;
   margin-right: -17px; }
 

@@ -2463,6 +2463,20 @@ section.map
 {
     position: relative;
 }
+@media (max-width: 414px)
+{
+    .slider
+    {
+        padding: 0;
+    }
+}
+@media (max-width: 414px)
+{
+    #vk_community_messages
+    {
+        display: none;
+    }
+}
 header,
 .header
 {

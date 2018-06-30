@@ -4,8 +4,8 @@
     var options = $.extend({
       default_offset_pct: 0.5,
       orientation: 'horizontal',
-      before_label: 'До химчистки',
-      after_label: 'После химчистки',
+      before_label: 'До',
+      after_label: 'После',
       no_overlay: false,
       move_slider_on_hover: false,
       move_with_handle_only: true,
