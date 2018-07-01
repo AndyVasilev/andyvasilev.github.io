@@ -2048,21 +2048,32 @@ section h2
     section h2
     {
         font-size: 1.8em;
+
+        margin-bottom: 10px;
     }
 }
 @media (max-width: 414px)
 {
     section
     {
-        padding: 1.5em 15px;
+        padding: 1.5em 10px;
     }
 }
 section.first
 {
     padding: 1.5em 15px;
 }
+@media (max-width: 414px)
+{
+    section.first
+    {
+        padding: 1.5em 10px;
+    }
+}
 section.footer
 {
+    padding: 0 15px;
+
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 }
@@ -2175,6 +2186,13 @@ section.footer
     margin: .5em 0 0;
     margin-left: 20px;
 }
+@media (max-width: 320px)
+{
+    .advantages__item h3
+    {
+        font-size: 1em;
+    }
+}
 .advantages__item_title
 {
     padding-right: 20px;
@@ -2208,9 +2226,23 @@ section.footer
 {
     padding: 24px 24px 0;
 }
+@media (max-width: 414px)
+{
+    .important__header
+    {
+        padding: 24px 20px 0;
+    }
+}
 .important__content
 {
     margin: 12px 24px 24px;
+}
+@media (max-width: 414px)
+{
+    .important__content
+    {
+        margin: 12px 20px 24px;
+    }
 }
 .important__content .block
 {
@@ -2331,7 +2363,38 @@ section.footer
 }
 .important__info .important__type::before
 {
-    background: url('/img/info-circle.svg') no-repeat;
+    background: url(/img/info-circle.svg) no-repeat;
+}
+@media (max-width: 414px)
+{
+    .important__info .important__type::before
+    {
+        font-size: 16px;
+        font-weight: 100;
+
+        display: -ms-flexbox;
+        display: flex;
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 35px;
+        margin-bottom: 10px;
+        padding-top: 2px;
+        padding-left: 37px;
+
+        content: 'Полезно знать';
+
+        color: #0579ff;
+        border-radius: 50px;
+        background-color: rgba(5, 121, 255, .2);
+        background-image: url(/img/info-circle.svg);
+        background-repeat: no-repeat;
+        background-position: center left 5px;
+        background-size: 25px;
+
+        -ms-flex-align: center;
+        align-items: center;
+    }
 }
 .items
 {
@@ -2589,7 +2652,7 @@ header h1 .svg-key,
     .link-tel
     {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 15px;
         margin-left: 0;
         padding: 10px;
 
@@ -3023,6 +3086,108 @@ footer__massanger,
 .footer__massanger
 {
     padding: 30px 0;
+}
+@media (max-width: 414px)
+{
+    footer__massanger,
+    .footer__massanger
+    {
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+footer__massanger span,
+.footer__massanger span
+{
+    margin-right: 30px;
+
+    color: #a3a3a3;
+}
+@media (max-width: 414px)
+{
+    footer__massanger span,
+    .footer__massanger span
+    {
+        margin: 0;
+    }
+    footer__massanger span br,
+    .footer__massanger span br
+    {
+        display: none;
+
+        margin: 0;
+    }
+}
+footer__massanger .massage,
+.footer__massanger .massage
+{
+    line-height: 40px;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    height: 40px;
+    padding: 0 20px;
+
+    text-decoration: none;
+
+    color: #fff;
+    border-radius: 50px;
+
+    -ms-flex-align: center;
+    align-items: center;
+}
+@media (max-width: 414px)
+{
+    footer__massanger .massage,
+    .footer__massanger .massage
+    {
+        width: 100%;
+
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    footer__massanger .massage:first-of-type,
+    .footer__massanger .massage:first-of-type
+    {
+        margin-top: 10px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+footer__massanger .vk,
+.footer__massanger .vk
+{
+    margin-right: 20px;
+
+    background: #5c81b3;
+}
+footer__massanger .vk::before,
+.footer__massanger .vk::before
+{
+    width: 25px;
+    height: 15px;
+    margin-right: 10px;
+
+    content: '';
+
+    background: url(/img/vk.svg) no-repeat;
+}
+footer__massanger .viber,
+.footer__massanger .viber
+{
+    background: #7c529e;
+}
+footer__massanger .viber::before,
+.footer__massanger .viber::before
+{
+    width: 25px;
+    height: 20px;
+    margin-right: 10px;
+
+    content: '';
+
+    background: url(/img/viber.svg) no-repeat;
 }
 footer__links,
 .footer__links
