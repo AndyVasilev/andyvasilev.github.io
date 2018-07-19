@@ -1,72 +1,62 @@
-ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-            center: [50.400498, 36.887916],
-            zoom: 11,
-            controls: ['zoomControl', 'fullscreenControl']
-        }),
 
-        myGeoObject = new ymaps.GeoObject({
-            // Описание геометрии.
-            geometry: {
-                type: "Point",
-                coordinates: [50.400498, 36.887916]
-            },
-            // Свойства.
-            properties: {
-                // Контент метки.
-                iconCaption: 'Зона выезда'
-            }
-          }, {
-            preset: "islands#blueStarIcon"
-        });
-        myMap.behaviors.disable('scrollZoom');
-        myMap.geoObjects.add(myGeoObject);
-
-
-        var myPolygon = new ymaps.Polygon([
-        // Указываем координаты вершин многоугольника.
-        // Координаты вершин внешнего контура.
-        [
-            [50.43548554443625,36.7641481472167],
-            [50.418378894496186,36.76483479272451],
-            [50.4138818848412,36.73822727929674],
-            [50.39342055783752,36.71101895104965],
-            [50.36548446895298,36.71882954370102],
-            [50.344507813919925,36.787494094482234],
-            [50.33841075569673,36.832469375243996],
-            [50.340882630894505,36.87298146020494],
-            [50.372730780198296,36.94851246606432],
-            [50.414430323632374,36.98799458276354],
-            [50.424575289887926,37.061036498657096],
-            [50.438089377265555,37.103737266174186],
-            [50.459490165824214,37.10798588525376],
-            [50.47302161975145,37.04953518640122],
-            [50.47252863916426,36.97975483666983],
-            [50.47389801691936,36.9380411220702],
-            [50.48096337232165,36.89941731225577],
-            [50.47258341503419,36.86045017968739],
-            [50.47822498848803,36.82148304711904],
-            [50.490765478727376,36.78517666589341],
-            [50.48841096933641,36.74200382958971],
-            [50.47582877179653,36.717606456390236],
-            [50.45798338658005,36.71449509393297],
-            [50.445077900672636,36.74947109948717],
-            [50.43548554443625,36.7641481472167]
-        ]
-    ], {
-        // Описываем свойства геообъекта.
-        // Содержимое балуна.
-        hintContent: "Зона бесплатного выезда"
-    }, {
-        // Задаем опции геообъекта.
-        // Цвет заливки.
-        fillColor: '#23b55d80',
-        strokeColor: '#23b55d',
-        // Ширина обводки.
-        strokeWidth: 5
+var swiper = new Swiper('.section-2 .swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
 
-    // Добавляем многоугольник на карту.
-    myMap.geoObjects.add(myPolygon);
 
+    var swiper = new Swiper('.comments .slider .swiper-container', {
+        slidesPerView: 6,
+        breakpoints: {
+            414: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                slidesPerGroup: 1,
+            },
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                slidesPerGroup: 1,
+            }
+        }
+    });
+
+
+    var swiper = new Swiper('.sertificat .swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+        el: '.sertificat .swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.sertificat .swiper-button-next',
+        prevEl: '.sertificat .swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+        },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+        }
+    }
 });

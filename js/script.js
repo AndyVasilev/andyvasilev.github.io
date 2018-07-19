@@ -78,22 +78,145 @@ $(document).ready(function(){
   $(this).toggleClass('act');
   if($(this).hasClass('act')) {
   $('.nav_mobile').addClass('act');
+  $('.body').addClass('body-hidden');
   }
   else {
   $('.nav_mobile').removeClass('act');
+  $('.body').removeClass('body-hidden');
   }
   });
   });
 
 
-$(function() {
-	// Active the first thumb & panel
-	$(".tabs-thumb:first-child").addClass("is-active").closest(".tabs").find(".tabs-panel:first-child").show();
+  $(document).ready(function(){
+    // menu click event
+    $('.nav__link').click(function() {
+    $(this).toggleClass('act');
+    if($(this).hasClass('act')) {
+    $('.nav_mobile').removeClass('act');
+    $('.btn-menu').removeClass('act');
+    $('.body').removeClass('body-hidden');
+    }
+    else {
+    $('.nav_mobile').removeClass('act');
+    $('.btn-menu').removeClass('act');
+    $('.body').removeClass('body-hidden');
+    }
+    });
+    });
 
-	$(".tabs-thumb").click(function() {
-		// Cancel the siblings
-		$(this).siblings(".tabs-thumb").removeClass("is-active").closest(".tabs").find(".tabs-panel").hide();
-		// Active the thumb & panel
-		$(this).addClass("is-active").closest(".tabs").find(".tabs-panel").eq($(this).index(".tabs-thumb")).show();
+
+
+
+    // Telephone Mask on Form
+  $(function(){
+    $(".tel-field").mask("+7(999) 999-99-99");
+  });
+
+  // Show lists calculator
+  $('.show-btn').click(function() {
+    $('.calc__type_show').toggleClass("show");
+    $(this).toggleClass("rotate");
+  });
+
+  // anchor
+
+  $(document).ready(function() {
+    $("a.scrollto").click(function() {
+      var elementClick = $(this).attr("href");
+      var destination = $(elementClick).offset().top;
+      jQuery("html:not(:animated),body:not(:animated)").animate({
+        scrollTop: destination
+      }, 800);
+      return false;
+    });
+  });
+
+
+jQuery(document).ready(function($){
+	//open popup
+	$('.trigger').on('click', function(event){
+		event.preventDefault();
+
+		var type = 'callback'; //default popup
+        if($(this).data('popup-type'))
+            type = $(this).data('popup-type');
+
+        var modal = $('.modal[data-type='+type+']');
+
+        if($(this).data('popup-title'))
+            $(modal).find('input[name=title]').val($(this).data('popup-title'));
+
+
+		$(modal).addClass('is-visible');
 	});
+
+	//close popup
+	$('.modal').on('click', function(event){
+		if( $(event.target).is('.close') || $(event.target).is('.modal') ) {
+			event.preventDefault();
+			$(this).removeClass('is-visible');
+            $(this).find(".form-send__success_visible").removeClass('form-send__success_visible').addClass('form-send__success_hidden');
+		}
+	});
+	//close popup when clicking the esc keyboard button
+	$(document).keyup(function(event){
+    	if(event.which=='27'){
+    		$('.modal').removeClass('is-visible');
+	    }
+    });
+
+    $('.callback-form').submit(function(e){
+        e.preventDefault();
+        var $this = $(this);
+        var modal = $(this).parents('.modal:eq(0)');
+
+        var name = $(this).find('input[name=user_name]').val();
+        var email = $(this).find('input[name=user_email]').val();
+        var phone = $(this).find('input[name=user_phone]').val();
+        var title = $(this).find('input[name=title]').val() + '/' + window.location;
+
+        if(!phone && !email) return false;
+        $.ajax({
+            type: "POST",
+            url: "/site/submit-callback",
+            dataType: 'json',
+            data: {name:name,phone:phone,title:title,email:email},
+            success: function () {
+                $(modal).find('.form-send__success').addClass('form-send__success_visible').removeClass('form-send__success_hidden');
+            }
+        });
+        return false;
+    });
+
+    $('.send-file-form').submit(function(e){
+        e.preventDefault();
+        var $this = $(this);
+        var name = $(this).find('input[name=user_name]').val();
+        var email = $(this).find('input[name=user_email]').val();
+        var title = $(this).find('input[name=title]').val() + '/' + window.location;;
+        var file = $(this).find('input[name=file]').val();
+
+        if(!email) return false;
+        $.ajax({
+            type: "POST",
+            url: "/site/send-info",
+            dataType: 'json',
+            data: {name:name,email:email,title:title,file:file},
+            success: function () {
+                $('.modal[data-type=check-list]').addClass('is-visible');
+                $this.find('input[name=user_name]').val('');
+                $this.find('input[name=user_email]').val('');
+            }
+        });
+        return false;
+    });
+});
+
+$(".comments .slider .sw-block").click(function (e) {
+    $(".comments .slider .sw-block").removeClass('active');
+    $(this).addClass('active');
+
+    $('.comments .comments__box .comment').removeClass('comment-active');
+    $($(this).attr('data-class')).addClass('comment-active');
 });
