@@ -2249,11 +2249,27 @@ section
 {
     font-size: 24px;
 }
+@media (max-width: 320px)
+{
+    .section-main__main-text .text p
+    {
+        font-size: 20px;
+    }
+}
 .section-main__main-text .text li
 {
     font-size: 18px;
 
     color: #f64028;
+}
+@media (max-width: 320px)
+{
+    .section-main__main-text .text li
+    {
+        font-size: 16px;
+
+        transform: translateX(1.2em);
+    }
 }
 .section-main__main-text .text li span
 {
@@ -2317,6 +2333,16 @@ section
         font-size: 30px;
     }
 }
+@media (max-width: 320px)
+{
+    .section-main__main-text h1,
+    .section-main__main-text h2
+    {
+        font-size: 24px;
+
+        text-align: left;
+    }
+}
 .section-main__main-text h2
 {
     font-size: 30px;
@@ -2340,6 +2366,15 @@ section
     .section-main__main-text h2
     {
         font-size: 24px;
+
+        text-align: left;
+    }
+}
+@media (max-width: 320px)
+{
+    .section-main__main-text h2
+    {
+        font-size: 20px;
 
         text-align: left;
     }
@@ -2429,6 +2464,10 @@ section h2::after
         margin-top: 1em!important;
     }
 }
+.section-1 .col-flex-xs
+{
+    padding: 5px;
+}
 .section-1 span
 {
     font-size: 3em;
@@ -2439,6 +2478,13 @@ section h2::after
     .section-1 span
     {
         font-size: 2.5em;
+    }
+}
+@media (max-width: 320px)
+{
+    .section-1 span
+    {
+        font-size: 2em;
     }
 }
 .section-1 p
@@ -2455,6 +2501,13 @@ section h2::after
     .section-1 p
     {
         font-size: 16px;
+    }
+}
+@media (max-width: 320px)
+{
+    .section-1 p
+    {
+        font-size: 14px;
     }
 }
 .section-1 .container:nth-child(2n+1) .col-xs-4:nth-child(2n)
@@ -2490,6 +2543,8 @@ section h2::after
 {
     font-weight: 900;
 
+    margin-bottom: 0;
+
     text-transform: uppercase;
 }
 .section-2__block
@@ -2510,7 +2565,7 @@ section h2::after
 }
 .section-2__block ul
 {
-    margin: 0 60px;
+    padding-left: 25px;
 }
 .section-2__block li
 {
@@ -2518,6 +2573,13 @@ section h2::after
     font-weight: 900;
 
     list-style-type: decimal;
+}
+@media (max-width: 414px)
+{
+    .section-2__block li
+    {
+        line-height: 1.3em;
+    }
 }
 .section-2__block li:nth-child(2n)
 {
@@ -2549,6 +2611,20 @@ section h2::after
 {
     margin: 30px 0;
 }
+@media (max-width: 414px)
+{
+    .section-3 .container .container
+    {
+        margin: 15px 0;
+    }
+}
+@media (max-width: 414px)
+{
+    .section-3 .container .container img
+    {
+        width: 50%;
+    }
+}
 .section-3 .container .container h4
 {
     font-size: 20px;
@@ -2560,9 +2636,26 @@ section h2::after
     text-align: center;
     text-transform: uppercase;
 }
+@media (max-width: 414px)
+{
+    .section-3 .container .container h4
+    {
+        font-size: 18px;
+
+        margin-top: 15px;
+    }
+}
 .section-3 .container .container p
 {
     text-align: center;
+}
+@media (max-width: 414px)
+{
+    .section-3 .container .container p
+    {
+        font-size: 14px;
+        line-height: 1.2em;
+    }
 }
 @media (max-width: 414px)
 {
@@ -2588,6 +2681,13 @@ section h2::after
 
     margin-bottom: 0;
 }
+@media (max-width: 414px)
+{
+    .section-3 .container .container .col-xs-6 h4
+    {
+        font-size: 24px;
+    }
+}
 .section-3 .container .container .col-xs-6 p
 {
     font-size: 40px;
@@ -2605,7 +2705,25 @@ section h2::after
 }
 .video h2
 {
+        flex-direction: column;
+
     text-align: center;
+
+    -ms-flex-direction: column;
+}
+.video h2 span
+{
+    font-size: 20px;
+}
+@media (max-width: 414px)
+{
+    .video h2 span
+    {
+        font-size: 16px;
+        font-weight: normal;
+
+        margin-top: 10px;
+    }
 }
 .video__block
 {
@@ -3516,6 +3634,13 @@ section.comments .comment-call p
 .comments__box .container
 {
     width: 67%;
+}
+@media (max-width: 414px)
+{
+    .comments__box .container
+    {
+        width: 100%;
+    }
 }
 .comments__box .twentytwenty-container img
 {
