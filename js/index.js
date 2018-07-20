@@ -13,6 +13,18 @@ var swiper = new Swiper('.section-2 .swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      breakpoints: {
+          640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              slidesPerGroup: 1,
+          },
+          320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              slidesPerGroup: 1,
+          }
+      }
     });
 
 

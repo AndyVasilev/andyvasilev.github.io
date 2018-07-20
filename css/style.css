@@ -1753,7 +1753,7 @@ ol:not([class]) ol
 ul:not([class]) li,
 ol:not([class]) li
 {
-    transform: translateX(2.5em);
+    transform: translateX(-1.5em);
     animation: fixlists 1s;
 }
 @keyframes fixlists
@@ -2205,11 +2205,11 @@ section
     background-position: 0 20%;
     background-size: cover;
 }
-@media (max-width: 320px)
+@media (max-width: 414px)
 {
     .section-main
     {
-        height: 100vh;
+        height: auto;
     }
 }
 .section-main .container
@@ -2237,6 +2237,15 @@ section
         align-items: flex-start;
     }
 }
+@media (max-width: 414px)
+{
+    .section-main .container .container
+    {
+            flex-direction: column-reverse;
+
+        -ms-flex-direction: column-reverse;
+    }
+}
 .section-main__main-text
 {
     width: 100%;
@@ -2256,11 +2265,46 @@ section
         font-size: 20px;
     }
 }
+@media (max-width: 414px)
+{
+    .section-main__main-text .text ul.ul
+    {
+        padding-left: 25px;
+    }
+}
+@media (max-width: 320px)
+{
+    .section-main__main-text .text ul.ul
+    {
+        padding-left: 0;
+    }
+}
 .section-main__main-text .text li
 {
     font-size: 18px;
 
+    position: relative;
+
+    list-style-type: none;
+
     color: #f64028;
+}
+.section-main__main-text .text li::before
+{
+    position: absolute;
+    top: 2px;
+    left: -25px;
+
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+
+    content: '';
+
+    background: url('/img/svg/check-box.svg') no-repeat;
+    background-size: contain;
 }
 @media (max-width: 320px)
 {
@@ -2268,7 +2312,9 @@ section
     {
         font-size: 16px;
 
-        transform: translateX(1.2em);
+        margin: 5px 0 5px 20px;
+
+        transform: translateX(0);
     }
 }
 .section-main__main-text .text li span
@@ -2323,6 +2369,8 @@ section
     font-size: 40px;
     font-weight: 900;
 
+    margin-bottom: 60px;
+
     text-transform: uppercase;
 }
 @media (max-width: 768px)
@@ -2331,6 +2379,8 @@ section
     .section-main__main-text h2
     {
         font-size: 30px;
+
+        margin-bottom: 0;
     }
 }
 @media (max-width: 320px)
@@ -2547,6 +2597,13 @@ section h2::after
 
     text-transform: uppercase;
 }
+@media (max-width: 414px)
+{
+    .section-2__header h3
+    {
+        text-align: left;
+    }
+}
 .section-2__block
 {
     margin-top: 30px;
@@ -2563,16 +2620,34 @@ section h2::after
     border-radius: 6px;
     background: #f2f0ef;
 }
+@media (max-width: 414px)
+{
+    .section-2__block h4
+    {
+        line-height: 1.2em;
+
+        text-align: left;
+    }
+}
 .section-2__block ul
 {
     padding-left: 25px;
 }
+@media (max-width: 414px)
+{
+    .section-2__block ul
+    {
+        padding: 0;
+    }
+}
 .section-2__block li
 {
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 400;
 
     list-style-type: decimal;
+
+    color: #f64028;
 }
 @media (max-width: 414px)
 {
@@ -2587,12 +2662,25 @@ section h2::after
 }
 .section-2__block li span
 {
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: 900;
+
+    color: #000;
 }
 @media (max-width: 414px)
 {
-    .section-2__block .col-xs-5
+    .section-2__block li span
+    {
+        font-size: 18px;
+
+        display: block;
+
+        margin-top: 5px;
+    }
+}
+@media (max-width: 414px)
+{
+    .section-2__block .col-xs-6
     {
         max-width: 100%;
 
@@ -2602,9 +2690,20 @@ section h2::after
 }
 @media (max-width: 414px) and (max-width: 414px)
 {
-    .section-2__block .col-xs-5:nth-child(2n)
+    .section-2__block .col-xs-6:nth-child(2n)
     {
         margin-top: 15px;
+    }
+}
+.section-3
+{
+    margin: 30px 0;
+}
+@media (max-width: 414px)
+{
+    .section-3
+    {
+        margin: 0;
     }
 }
 .section-3 .container .container
@@ -2727,9 +2826,26 @@ section h2::after
 }
 .video__block
 {
-    width: 100%;
-    height: 500px;
-    margin-top: 30px;
+    display: -ms-flexbox;
+    display: flex;
+
+    height: 250px;
+    margin-right: 80px;
+
+    border: 3px solid #f64028;
+
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+@media (max-width: 414px)
+{
+    .video__block
+    {
+        width: 100%;
+        height: 150px;
+        margin-top: 20px;
+        margin-right: 0;
+    }
 }
 .boxses
 {
@@ -3457,6 +3573,7 @@ section h2::after
 .sw-block
 {
     width: 360px;
+    height: 100%;
 
     cursor:         grab;
     cursor: -webkit-grab;
