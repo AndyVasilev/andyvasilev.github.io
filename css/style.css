@@ -2631,23 +2631,29 @@ section h2::after
 }
 .section-2__block ul
 {
+    margin-left: 25px;
     padding-left: 25px;
+
+    border-left: 3px solid #f64028;
 }
 @media (max-width: 414px)
 {
     .section-2__block ul
     {
+        margin: 0;
         padding: 0;
+
+        border: none;
     }
 }
 .section-2__block li
 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 
     list-style-type: decimal;
 
-    color: #f64028;
+    color: #757575;
 }
 @media (max-width: 414px)
 {
@@ -2662,8 +2668,8 @@ section h2::after
 }
 .section-2__block li span
 {
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 24px;
+    font-weight: 700;
 
     color: #000;
 }
@@ -2678,22 +2684,16 @@ section h2::after
         margin-top: 5px;
     }
 }
-@media (max-width: 414px)
+.section-2__block .col-xs-6
 {
-    .section-2__block .col-xs-6
-    {
-        max-width: 100%;
+    max-width: 100%;
 
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    }
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
 }
-@media (max-width: 414px) and (max-width: 414px)
+.section-2__block .col-xs-6:nth-child(2n)
 {
-    .section-2__block .col-xs-6:nth-child(2n)
-    {
-        margin-top: 15px;
-    }
+    margin-top: 15px;
 }
 .section-3
 {
