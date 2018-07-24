@@ -1,6 +1,6 @@
 
 var swiper = new Swiper('.section-2 .swiper-container', {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
       slidesPerGroup: 1,
       loop: true,

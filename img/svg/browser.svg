@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="496px" height="496px" viewBox="0 0 496 496" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>browser</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="browser" fill-rule="nonzero">
+            <rect id="Rectangle-path" fill="#F64028" x="32" y="96" width="224" height="240"></rect>
+            <g id="Group">
+                <path d="M0,0 L0,496 L496,496 L496,0 L0,0 Z M480,16 L480,64 L16,64 L16,16 L480,16 Z M16,480 L16,80 L480,80 L480,480 L16,480 Z" id="Shape" fill="#B3B3B3"></path>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="32" y="32" width="16" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="64" y="32" width="16" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="96" y="32" width="16" height="16"></rect>
+                <path d="M272,464 L360,464 L360,352 L272,352 L272,464 Z M288,368 L344,368 L344,448 L288,448 L288,368 Z" id="Shape" fill="#B3B3B3"></path>
+                <path d="M32,464 L256,464 L256,352 L32,352 L32,464 Z M48,368 L240,368 L240,448 L48,448 L48,368 Z" id="Shape" fill="#B3B3B3"></path>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="304" y="96" width="160" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="96" width="16" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="128" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="160" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="192" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="224" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="256" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="288" width="192" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="448" y="320" width="16" height="16"></rect>
+                <rect id="Rectangle-path" fill="#B3B3B3" x="272" y="320" width="160" height="16"></rect>
+                <path d="M376,464 L464,464 L464,352 L376,352 L376,464 Z M392,368 L448,368 L448,448 L392,448 L392,368 Z" id="Shape" fill="#B3B3B3"></path>
+                <path d="M80,280 C80,257.944 97.944,240 120,240 L168,240 C190.056,240 208,257.944 208,280 L208,336 L224,336 L224,280 C224,253.704 205.76,231.648 181.288,225.664 C192.744,215.4 200,200.552 200,184 C200,153.12 174.88,128 144,128 C113.12,128 88,153.12 88,184 C88,200.552 95.256,215.4 106.712,225.664 C82.24,231.648 64,253.704 64,280 L64,336 L80,336 L80,280 Z M104,184 C104,161.944 121.944,144 144,144 C166.056,144 184,161.944 184,184 C184,206.056 166.056,224 144,224 C121.944,224 104,206.056 104,184 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
