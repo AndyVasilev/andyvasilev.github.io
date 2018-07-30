@@ -9,6 +9,7 @@
     <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>
+    <link rel="stylesheet" href="css/nouislider.min.css">
   <title>БригадуНадо</title>
   <meta name="description" content="Сервис по организации ремонта квартир, офисов, загородных домов и коммерческих помещений. Все районы СПб и ЛО. БригадуНадо.">
   <meta name="theme-color" content="#f64028">
@@ -37,9 +38,9 @@
       <div class="container row row-middle-xs row-between-xs">
 
         <div class="section-main__main-text">
-          <div class="container row row-middle-xs row-around-xs">
+          <div class="container row row-middle-xs row-between-xs">
           <h1>Партнёрская программа<br><span class="orange">«БригадуНадо»</span></h1>
-          <div class="text">
+          <div class="text" style="display:none;">
             <ul class="ul">
               <li><span>Ремонт квартир под ключ</span></li>
               <li><span>Комплектация мебелью и техникой</span></li>
@@ -49,7 +50,7 @@
         </div>
 
 
-          <div class="container row row-middle-xs row-center-xs">
+          <div class="container row row-middle-xs row-between-xs">
             <div class="text">
               <p>Зарабатывайте больше!<br>Вместе с партнерской программой «БригадуНадо»</p>
               <ul class="ul no-before">
@@ -62,6 +63,8 @@
                 Вашим клиентам нужен дом!
                </p>
             </div>
+            <div class="man">
+            </div>
           </div>
 
         </div>
@@ -71,7 +74,52 @@
     <section class="section-1">
       <div class="container row row-center-xs">
         <h2>Рассчитайте своё вознаграждение!</h2>
-        <div class="uCalc_129584"></div><script> var widgetOptions129584 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=129584&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();</script>
+
+      <div class="calculator-slider">
+        <div class="slider">
+          <div class="slider-block">
+            <div class="slider-label">
+              <p>Стоимость работ с «БригадуНадо» — </p><span id="summa"></span>
+            </div>
+            <div id="slider-money" class="slider-money">
+              <div class="marks-money">
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-block">
+            <div class="slider-label">
+              <p>Количество договоров — </p><span id="data"></span>
+            </div>
+            <div id="slider-date" class="slider-date">
+              <div class="marks-date">
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+                <div class="mark"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="section-return-info"><span>Ваша ежемесячная прибыль: </span><span id="return"></span></div>
+
+      </div>
+
         <a class="btn btn-size-l btn-orange trigger">Начать зарабатывать</a>
       </div>
     </section>
@@ -85,19 +133,43 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="sw-block">
-                          <div class="img col-xs-4">
-                            <img src="/img/photo-2.png">
-                          </div>
+                          <img src="/img/people/marina.png">
                           <div class="info col-xs-8">
                             <h4>
-                              Анна Петрова
+                              Марьям Сергеева
                               <span>Риелтор</span>
                             </h4>
-                            <p>Зарабатывает с «БригадуНадо» до 150 000 рублей в месяц</p>
-                            <p>Я не так давно работаю в недвижимости. И это большая удача, что я стала сотрудничать с «БригадуНадо». Мой доход подрос примерно вдвое за последние полгода</p>
+                            <p>«БригадуНадо», где вы были, когда я только начинала? Но лучше поздно, чем никогда. Здорово, что мы встретились.</p>
                           </div>
                         </div>
-                    </div>
+                      </div>
+                        <!-- -->
+                      <div class="swiper-slide">
+                        <div class="sw-block">
+                          <img src="/img/people/levan.png">
+                          <div class="info col-xs-8">
+                            <h4>
+                              Сергей Войков
+                              <span>Риелтор</span>
+                            </h4>
+                            <p>Этой компании я передал уже шестерых клиентов. Всегда довожу свои сделки до конца, чтобы быть уверенным, что всё в порядке. И с «БригадуНадо» действительно приятно работать: ребята на объектах работают быстро и хорошо, а свой процент я получаю через два-три дня после заключения договора.</p>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- -->
+                      <div class="swiper-slide">
+                        <div class="sw-block">
+                          <img src="/img/people/elena.png">
+                          <div class="info col-xs-8">
+                            <h4>
+                              Елена Дорофеева
+                              <span>Риелтор</span>
+                            </h4>
+                            <p>Я знаю, что такое покупать жильё. Одно дело, когда ты покупаешь голые стены или разруху — впереди ещё ад с поиском ремонтников, покупкой материалов и бесконечными доделками. И совсем другое, когда есть те, кто готов завтра же приступить к ремонту и сделать красиво и быстро. За последний месяц у меня не было ни одной проваленной сделки. Спасибо компании «БригадуНадо».</p>
+                          </div>
+                        </div>
+                      </div>
+
                 </div>
                 <div class="swiper-pagination"></div>
 
@@ -120,8 +192,8 @@
           <div class="col-xs-6 col-flex-xs">
             <img src="/img/svg/browser.svg" width="100" height="100">
             <h4>Вы регистрируете личный кабинет</h4>
-            <p>Зарегистрируйте ЛК: bn.com<br>
-              или позвоните: +7 (812) 429-83-30</p>
+            <p><a href="">Оставьте заявку</a><br>
+              или позвоните: <a href="tel:+78124298330">+7 (812) 429-83-30</a></p>
           </div>
           <div class="col-xs-6 col-flex-xs">
             <img src="/img/svg/teamwork.svg" width="100" height="100">
@@ -200,8 +272,8 @@
               </div>
               <b>Пора зарабатывать</b>
               <div class="pdf">
-                <a href="/img/new-landing/brigada/dogovor.pdf" target="_blank">Скачать договор оферты</a>
-                <a href="/img/new-landing/brigada/plan.pdf" target="_blank">Скачать инструкцию по регистрации ЛК</a>
+                <a href="/img/doc/agent.docx" target="_blank">Скачать договор оферты</a>
+                <a href="/img/doc/lk.pdf" target="_blank">Скачать инструкцию по регистрации ЛК</a>
               </div>
               <a class="btn btn-size-l btn-orange trigger">Стать партнером и начать зарабатывать</a>
           </div>
@@ -216,13 +288,20 @@
         <a href="/">
           <img src="/img/svg/logo.svg" alt="«БригадуНадо»" width="100" height="40">
         </a>
-        <span class="copirait">© 2018, официальный сайт БригадуНадо - ремонт квартир в СПб с гарантией</span>
+        <span class="copirait">
+          © 2018, официальный сайт БригадуНадо - ремонт квартир в СПб с гарантией<br>
+          * Не является публичной офертой
+        </span>
       </div>
         <div class="row row-end-xs">
           <p class="footer__adress">
           г. Санкт-Петербург | Выборгская набережная, 61, офис 400/3<br>
           <span>м.Чёрная речка, м.Петроградская, м.Лесная</span>
           </p>
+        </div>
+        <div class="row row-end-xs">
+          <a href="https://vk.com/brigadunado" target="_blank"><img src="/img/svg/vk-icon.svg" width="30" height="30"></a>
+          <a href="https://www.facebook.com/brigadunado/" target="_blank"><img src="/img/svg/facebook-icon.svg" width="30" height="30"></a>
         </div>
     </div>
   </footer>
@@ -263,6 +342,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js'></script>
   <script src="js/script.min.js"></script>
+  <script src="js/nouislider.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
