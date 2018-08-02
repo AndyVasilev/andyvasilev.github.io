@@ -107,8 +107,6 @@ var stepSliderValueElement = document.getElementById("summa");
 var dataValueElement = document.getElementById("data");
 var returnValueElement = document.getElementById("return");
 
-
-var rate,valuePercent,rateValueElement = document.getElementById('percent');
 /*переменные для полученных значений ползунков*/
 var valueMoney, valueDate, valueReturn;
 
@@ -125,14 +123,14 @@ function getElemantValue() {
 
 /*вывод значений с ползунков*/
 
-dateSlider.noUiSlider.on("update", function(values, handle) {
+dateSlider.noUiSlider.on("update", function() {
 	getElemantValue();
-	dataValueElement.innerHTML = Math.round(valueDate);
-	returnValueElement.innerHTML = Math.round(valueReturn)+' ₽';
+	dataValueElement.innerHTML = Math.round(valueDate).toLocaleString();
+	returnValueElement.innerHTML = Math.round(valueReturn).toLocaleString()+' ₽';
 });
 
-moneySlider.noUiSlider.on("update", function(values, handle) {
+moneySlider.noUiSlider.on("update", function() {
 	getElemantValue();
-	stepSliderValueElement.innerHTML = Math.round(valueMoney)+' ₽';
-	returnValueElement.innerHTML = Math.round(valueReturn)+' ₽';
+	stepSliderValueElement.innerHTML = Math.round(valueMoney).toLocaleString()+' ₽';
+	returnValueElement.innerHTML = Math.round(valueReturn).toLocaleString()+' ₽';
 });
