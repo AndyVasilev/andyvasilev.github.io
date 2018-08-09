@@ -2170,7 +2170,6 @@ textarea::placeholder
 }
 .aside-menu
 {
-    border-radius: 12px 0 0 0;
     background: #433c56;
 
     grid-area: aside;
@@ -2253,7 +2252,6 @@ textarea::placeholder
 
     padding: 20px;
 
-    border-radius: 0 12px 0 0;
     background: #f0f1f5;
 
     grid-template-columns: 1fr 340px;
