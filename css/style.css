@@ -2037,6 +2037,10 @@ samp
 {
     width: auto;
 }
+.btn-s
+{
+    padding: 5px 15px;
+}
 .btn[disabled]
 {
     background: #abaeb2;
@@ -2291,6 +2295,13 @@ textarea::placeholder
     grid-gap: 20px;
     grid-template-rows: fit-content(100%);
 }
+.rows-2
+{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
 .footer
 {
     grid-area: footer;
@@ -2300,15 +2311,24 @@ textarea::placeholder
 {
     font-size: .625em;
 
-    padding: 2px 4px;
-    padding-top: 4px;
-
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
 
     color: #fff;
+}
+.mark_pdf,
+.mark_doc,
+.mark_xls
+{
+    display: inline-block;
+
+    width: 30px;
+    height: 13px;
+
+    text-align: center;
+    vertical-align: middle;
 }
 .mark_pdf
 {
@@ -2424,6 +2444,58 @@ textarea::placeholder
 
     opacity: 0;
 }
+.checkbox
+{
+    display: none;
+}
+/* NIGHT */
+.toggle
+{
+    position: relative;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 41px;
+    height: 18px;
+    margin-left: 10px;
+    padding: 4px 4px;
+
+    cursor: pointer;
+    transition: .25s;
+    text-align: left;
+
+    border-radius: 50px;
+    background: #d8dde3;
+
+    -ms-flex-align: center;
+    align-items: center;
+}
+.disc
+{
+    position: relative;
+    left: 0;
+
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    transition: .3s;
+    transform: rotate(0);
+
+    border-radius: 50%;
+    background: #c2c7cc;
+}
+/* DAY */
+.checkbox:checked + .toggle .disc
+{
+    left: 25px;
+
+    transform: rotate(110deg);
+
+    background: #61c580;
+}
 .document__link
 {
     position: relative;
@@ -2506,6 +2578,11 @@ textarea::placeholder
 {
     margin: 15px 0;
 }
+.module__content .row:last-child,
+.module__content .row > .row__content:last-child
+{
+    margin-bottom: 0;
+}
 .module__content .row > span,
 .module__content .row > .row__content > span
 {
@@ -2556,15 +2633,7 @@ textarea::placeholder
     padding: 5px;
 
     cursor: pointer;
-    transition: all .25s ease-out;
     text-align: center;
-
-    border-radius: 6px;
-    background: #f0f1f5;
-}
-.module__content .expand:hover
-{
-    background: #f8f8fa;
 }
 .module__content .expand span
 {
@@ -2572,7 +2641,18 @@ textarea::placeholder
 
     display: inline-block;
 
+    transition: all .25s ease-out;
+    text-transform: uppercase;
+
     color: #7b7c81;
+}
+.module__content .expand span:hover
+{
+    color: #303030;
+}
+.module__content .expand span:hover span::after
+{
+    border-top-color: #303030;
 }
 .module__content .expand span::after
 {
@@ -2582,6 +2662,7 @@ textarea::placeholder
     margin-left: 10px;
 
     content: '';
+    transition: all .25s ease-out;
 
     border: 3px solid;
     border-top-color: #7b7c81;
@@ -2595,13 +2676,18 @@ textarea::placeholder
     display: flex;
 
     padding: 20px;
-
-    border-top: 1px solid #f0f1f5;
+    padding-top: 0;
 
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: end;
     justify-content: flex-end;
+}
+.module__footer_border
+{
+    padding: 20px;
+
+    border-top: 1px solid #f0f1f5;
 }
 .module__footer span:nth-of-type(2n)
 {
@@ -2648,6 +2734,14 @@ textarea::placeholder
 {
     margin-left: 0;
 }
+.module-project .row span:nth-child(2),
+.module-money .row span:nth-child(2),
+.module-documents .row span:nth-child(2)
+{
+    font-weight: bold;
+
+    color: #413f73;
+}
 .comments
 {
     padding: 20px;
@@ -2679,6 +2773,84 @@ textarea::placeholder
     font-size: .750em;
 
     margin: 0;
+}
+.amount
+{
+    grid-column: span 2;
+}
+.amount-total
+{
+    font-weight: bold;
+
+    margin-left: 10px;
+
+    color: #4f4262;
+}
+.module-revise .module__content
+{
+    padding: 0;
+    padding-bottom: 20px;
+}
+.module-revise .module__content .row
+{
+    padding: 0 20px;
+}
+.module-revise .module__content .row:nth-of-type(2n)
+{
+    padding: 20px;
+
+    border-top: 1px solid #d8dde3;
+    border-bottom: 1px solid #d8dde3;
+}
+.module-revise .module__content .row:last-child
+{
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+.module-revise .module__content .col
+{
+    margin: 0;
+}
+.module-revise .module__content .col:nth-of-type(1) span:first-child
+{
+    font-weight: bold;
+
+    color: #413f73;
+}
+.module-revise .module__content .col:nth-of-type(1) span:nth-child(2)
+{
+    font-size: .750em;
+
+    color: #b6b6b6;
+}
+.module-revise .module__content .col:nth-of-type(2) span
+{
+    font-size: .750em;
+
+    padding: 10px;
+
+    background: #f0f1f5;
+}
+.module-revise .module__content .col:nth-of-type(2) span span
+{
+    font-size: inherit;
+    font-weight: bold;
+
+    margin-left: 10px;
+}
+.module-personal .module__header svg
+{
+    position: relative;
+    top: 3px;
+
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+
+    transform: rotate(180deg);
+
+    fill: #b6b6b6;
 }
 /*=== контекстный слой ===*/
 /*! hidden.less v0.0.1 | MIT License | github.com/paulradzkov/hidden.less */

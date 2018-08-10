@@ -124,7 +124,7 @@
               <span>Развернуть всю информацию</span>
             </div>
           </div>
-          <div class="module__footer">
+          <div class="module__footer module__footer_border">
             <span>
               <a class="link" href="">
                 <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#edit-icon"></use></svg>
@@ -146,7 +146,7 @@
               <h5>Дополнительные контакты</h5>
               <span>5 контактов</span>
             </div>
-            <input class="btn btn-auto" type="submit" value="Добавить контакт">
+            <input class="btn btn-auto" type="submit" value="+ Добавить контакт">
           </div>
           <div class="module__content">
             <div class="row row-between-xs">
@@ -253,11 +253,124 @@
           </div>
         </div>
 
-        <!-- Модуль -->
+        <div class="rows-2">
+          <!-- Деньги -->
+          <div class="module module-documents module_secondary">
+            <div class="module__header">
+              <div>
+                <h5>Деньги</h5>
+              </div>
+            </div>
+            <div class="module__content">
+              <div class="row row-between-xs">
+                  <span>Поступило:</span>
+                  <span>18 355 566,00 р.</span>
+              </div>
+              <div class="row row-between-xs">
+                  <span>Списано:</span>
+                  <span>0,00 р.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Документы -->
+          <div class="module module-money module_secondary">
+            <div class="module__header">
+              <div>
+                <h5>Документы</h5>
+              </div>
+            </div>
+            <div class="module__content">
+              <div class="row row-between-xs">
+                  <span>Исходящих:</span>
+                  <span>245</span>
+              </div>
+              <div class="row row-between-xs">
+                  <span>Входящих:</span>
+                  <span>0</span>
+              </div>
+            </div>
+          </div>
+          <div class="amount">
+            <span>Неоплаченная сумма по счетам:</span>
+            <span class="amount-total">0,00 р.</span>
+          </div>
+        </div>
+
+        <!-- Акт сверки -->
+        <div class="module module-revise module_secondary">
+          <div class="module__header">
+            <div>
+              <h5>Акты сверки:</h5>
+            </div>
+            <input class="btn btn-auto" type="submit" value="+ Создать новый">
+          </div>
+          <div class="module__content">
+            <div class="row row-middle-xs row-between-xs">
+              <div class="col">
+                <span>Акт сверки от 3 августа</span>
+                <span>с 8 февраля 2018 по 3 августа 2018</span>
+              </div>
+              <div class="col">
+                <span>Вам должны<span>567 000,00 р.</span></span>
+              </div>
+            </div>
+            <div class="row row-between-xs">
+              <div class="col">
+                <span>Акт сверки от 3 августа</span>
+                <span>с 8 февраля 2018 по 3 августа 2018</span>
+              </div>
+              <div class="col">
+                <span>Вам должны<span>567 000,00 р.</span></span>
+              </div>
+            </div>
+            <div class="row row-between-xs">
+              <div class="col">
+                <span>Акт сверки от 3 августа</span>
+                <span>с 8 февраля 2018 по 3 августа 2018</span>
+              </div>
+              <div class="col">
+                <span>Вам должны<span>567 000,00 р.</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Личный кабинет -->
+        <div class="module module-personal module_secondary">
+          <div class="module__header">
+            <div class="row">
+              <h5>Личный кабинет</h5>
+              <div class="lk">
+                <input class="checkbox" id="checkbox" type="checkbox" checked>
+                <label class="toggle" for="checkbox">
+                  <span class="disc">
+                  </span>
+                </label>
+              </div>
+            </div>
+            <a class="link" href="">
+              Перейти в ЛК контрагента
+              <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-left"></use></svg>
+            </a>
+
+          </div>
+          <div class="module__content">
+            <div class="row row-middle-xs row-between-xs">
+              <span>Выслать приглашение по:</span>
+              <div style="width:60%;">
+                <a class="btn btn-s" href="">SMS</a>
+                <a class="btn btn-s" href="">E-mail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Правая -->
       </div>
       <div class="content__aside">
         <!-- Документы -->
-        <div class="module module_primary">
+        <div class="module module-docs module_primary">
+
           <div class="module__header">
             <h5>Сканы документов</h5>
             <span>10 файлов</span>
@@ -310,10 +423,9 @@
             </div>
           </div>
           <div class="module__footer">
-            <input class="btn btn-size" type="submit" value="Добавить файл">
+            <input class="btn btn-size" type="submit" value="+ Добавить файл">
           </div>
         </div>
-
         <!-- Комментарии -->
         <div class="module-comment">
 
