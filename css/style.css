@@ -248,6 +248,22 @@ th
 {
     border-radius: 6px;
 }
+.flex-between
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.flex-middle
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-align: center;
+    align-items: center;
+}
 .flex-center-between
 {
     display: -ms-flexbox;
@@ -431,6 +447,18 @@ a:not([class]):active,
 .link,
 .link-novisited,
 .link-inherit,
+a:not([class])
+{
+    /*   &:focus {
+            background: fadeout(@links-hover, 80%);
+            box-shadow: 0 0 0 @links-focuswidth fadeout(@links-hover, 80%);
+            border-radius: @border-radius;
+            outline: none;
+        } */
+}
+.link,
+.link-novisited,
+.link-inherit,
 a:not([class]),
 .link:link,
 .link-novisited:link,
@@ -449,16 +477,6 @@ a:not([class]):visited
 a:not([class]):hover
 {
     transition: color 0s, background-color 0s, border-color 0s, box-shadow 0s, text-decoration-color 0s;
-}
-.link:focus,
-.link-novisited:focus,
-.link-inherit:focus,
-a:not([class]):focus
-{
-    border-radius: 6px;
-    outline: none;
-    background: rgba(74, 72, 131, .2);
-    box-shadow: 0 0 0 .1875em rgba(74, 72, 131, .2);
 }
 .link:not(a),
 .link-novisited:not(a),
@@ -2103,6 +2121,75 @@ textarea::placeholder
 {
     color: #b6b6b6;
 }
+.select
+{
+    font-size: .750em;
+
+    width: auto;
+    height: 34px;
+    margin-left: 20px;
+    padding: 0 40px 0 10px;
+
+    color: #7b7c81;
+    border-color: #c2c7cc;
+    border-radius: 6px;
+    background: #fff;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.select_family
+{
+    position: relative;
+
+    display: inline-block;
+}
+.select_family::after
+{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    margin-left: 10px;
+
+    content: '';
+    transition: all .25s ease-out;
+    transform: translateY(-50%);
+
+    border: 3px solid;
+    border-top-color: #7b7c81;
+    border-right-color: transparent;
+    border-bottom-width: 0;
+    border-left-color: transparent;
+}
+input[type='text']
+{
+    font-size: .750em;
+
+    padding: 7px 10px;
+
+    color: #7b7c81;
+    border: 1px solid #c2c7cc;
+    border-radius: 6px;
+}
+.input_family
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.input_family input[type='text']:nth-child(2n)
+{
+    margin: 0 20px;
+}
 /*=== проектный слой ===*/
 .header
 {
@@ -2258,9 +2345,9 @@ textarea::placeholder
 
     background: #f0f1f5;
 
-    grid-template-columns: 1fr 340px;
     grid-gap: 20px;
     grid-area: main;
+    grid-template-rows: fit-content(100%);
 }
 .content__nav
 {
@@ -2294,6 +2381,18 @@ textarea::placeholder
 
     grid-gap: 20px;
     grid-template-rows: fit-content(100%);
+}
+.one-column
+{
+    grid-template-columns: 1fr;
+}
+.one-column .content__nav
+{
+    grid-column: auto;
+}
+.two-column
+{
+    grid-template-columns: 1fr 340px;
 }
 .rows-2
 {
@@ -2448,7 +2547,6 @@ textarea::placeholder
 {
     display: none;
 }
-/* NIGHT */
 .toggle
 {
     position: relative;
@@ -2487,7 +2585,6 @@ textarea::placeholder
     border-radius: 50%;
     background: #c2c7cc;
 }
-/* DAY */
 .checkbox:checked + .toggle .disc
 {
     left: 25px;
@@ -2495,6 +2592,43 @@ textarea::placeholder
     transform: rotate(110deg);
 
     background: #61c580;
+}
+.radio
+{
+    display: none;
+}
+.radio_family label
+{
+    font-size: .750em;
+
+    display: inline-block;
+    float: left;
+
+    padding: 7px 20px;
+
+    transition: all .25s ease-out;
+
+    color: #433c56;
+    border: 1px solid #8a7aaf;
+}
+.radio_family label:first-of-type
+{
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+}
+.radio_family label:last-of-type
+{
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+}
+.radio_family label:hover
+{
+    color: #695991;
+}
+.radio_family .radio:checked + label
+{
+    color: #fff;
+    background: #8a7aaf;
 }
 .document__link
 {
@@ -2680,8 +2814,6 @@ textarea::placeholder
 
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
 }
 .module__footer_border
 {
@@ -2706,6 +2838,10 @@ textarea::placeholder
 
     fill: #433c56;
 }
+.module__footer a:last-child
+{
+    margin-left: 20px;
+}
 .module-user .row > span,
 .module-contacts .row > span,
 .module-user .row > .row__content > span,
@@ -2720,17 +2856,20 @@ textarea::placeholder
 {
     width: 40%;
 }
-.module-user .col span:first-child
+.module-user .col span:first-child,
+.module-new-contractor .col span:first-child
 {
     font-size: .6875em;
 
     color: #b6b6b6;
 }
-.module-user .row .row
+.module-user .row .row,
+.module-new-contractor .row .row
 {
     margin-left: 40%;
 }
-.module-user .row .row:first-of-type
+.module-user .row .row:first-of-type,
+.module-new-contractor .row .row:first-of-type
 {
     margin-left: 0;
 }
@@ -2851,6 +2990,45 @@ textarea::placeholder
     transform: rotate(180deg);
 
     fill: #b6b6b6;
+}
+.module-new-contractor .module__content .row
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.module-new-contractor .module__content .row input[type='text'],
+.module-new-contractor .module__content .row textarea
+{
+    font-size: .750em;
+
+    width: 60%;
+}
+.module-new-contractor .module__content .row .col
+{
+    width: 100%;
+}
+.module-new-contractor .module__content .row .col:nth-of-type(2n)
+{
+    margin: 0;
+    margin-left: 10px;
+}
+.module-new-contractor .module__content .row .col input[type='text']
+{
+    width: 100%;
+}
+.module-new-contractor .module__content .row .row
+{
+    width: 60%;
+
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+}
+.module-new-contractor .module__content .row-top-xs span
+{
+    margin-top: 10px;
 }
 /*=== контекстный слой ===*/
 /*! hidden.less v0.0.1 | MIT License | github.com/paulradzkov/hidden.less */

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>karos IS</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#433c56">
+</head>
+<body>
+  <div id="caros-is">
+    <div class="header">
+      <div class="logo">
+        <a href="/">karos IS</a>
+      </div>
+      <div class="user">
+        <a class="user__name" href="/">Карл Саксен-Кобург-Готский</a>
+        <div class="user__login">
+          <a href="/">Помощь</a>
+          <a href="/">Выйти</a>
+        </div>
+      </div>
+    </div>
+    <div class="aside-menu">
+      <ul class="nav">
+        <li class="nav__item nav__item_current">
+          <a class="nav__link" href="">
+            <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#contractors-icon"></use></svg>
+            Контрагенты
+          </a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="">
+            <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#documents-icon"></use></svg>
+            Документы
+          </a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="">
+            <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#finance-icon"></use></svg>
+            Деньги
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Контент-->
+    <div class="content one-column">
+      <div class="content__nav">
+        <h4>Заполните данные о новом контрагенте</h4>
+        <div class="radio_family">
+          <input id="radio_face" class="radio" type="radio" name="question-one">
+          <label for="radio_face">Физическое лицо</label>
+          <input id="organization" class="radio" type="radio" name="question-one" checked>
+          <label for="organization">Организация</label>
+          <input id="individual" class="radio" type="radio" name="question-one">
+          <label for="individual">ИП</label>
+        </div>
+        <div class="select_family">
+          <select class="select" name="type_contractor">
+            <option value="" hidden>Выберите тип контрагента</option>
+            <option value="Клиент">Клиент</option>
+            <option value="Исполнитель">Исполнитель</option>
+          </select>
+        </div>
+        <div class="module module_primary input_family">
+          <input type="text" name="" value="" placeholder="Выполняемые работы">
+          <input type="text" name="" value="" placeholder="Кол-во человек в бригаде">
+          <input type="text" name="" value="" placeholder="Производительность">
+        </div>
+      </div>
+      <div class="content__main">
+        <!-- Модуль -->
+        <div class="module module-new-contractor module_primary">
+          <div class="module__header">
+            <input type="text" name="" value="" placeholder="Введите ИНН или ОГРН">
+          </div>
+          <div class="module__content rows-2">
+            <!-- Левая -->
+            <div class="module__content_left">
+              <h5>Реквизиты для документов</h5>
+              <div class="row row-middle-xs">
+                <span>Краткое название</span>
+                <input type="text" name="" value="" placeholder="ООО «Экстерминатус»">
+              </div>
+              <div class="row row-top-xs">
+                <span>Полное название</span>
+                <textarea name="" rows="4" placeholder="Общество с Неограниченной Безответветсвенностью «Экстерминатус»"></textarea>
+              </div>
+              <div class="row row-middle-xs">
+                <span>ИНН</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>КПП</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>ОГРН</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>ОКПО</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-top-xs">
+                <span>Юридический адрес</span>
+                <textarea name="" rows="4" placeholder="Город, улица, дом, корпус, помещение"></textarea>
+              </div>
+              <div class="row row-top-xs">
+                <span>Фактический адрес</span>
+                <textarea name="" rows="4" placeholder="Город, улица, дом, корпус, помещение"></textarea>
+              </div>
+              <div class="row row-top-xs">
+                <span>Паспорт</span>
+                <div class="row">
+                  <div class="col">
+                    <span>Серия</span>
+                    <input type="text" name="" value="">
+                  </div>
+                  <div class="col">
+                    <span>Номер</span>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <span>Кем выдан</span>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <span>Дата выдачи</span>
+                    <input type="text" name="" value="">
+                  </div>
+                  <div class="col">
+                    <span>Код подразделения</span>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Правая -->
+            <div class="module__content_right">
+              <h5>Контакты</h5>
+              <div class="row row-middle-xs">
+                <span>Фамилия</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>Имя</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>Отчество</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>Пол</span>
+                <div class="row-start-xs">
+                  <input type="radio" name="sex" value="Муж" checked>
+                  <input type="radio" name="sex" value="Жен">
+                </div>
+              </div>
+              <div class="row row-middle-xs">
+                <span>Должность</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>В лице</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>Телефон</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-middle-xs">
+                <span>Электронная почта</span>
+                <input type="text" name="" value="">
+              </div>
+              <div class="row row-top-xs">
+                <span>Комментарий</span>
+                <textarea name="" rows="4" placeholder=""></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="module__footer module__footer_border">
+            <a class="btn btn-auto" href="">Сохранить</a>
+            <a class="btn btn-auto" href="">Отмена</a>
+          </div>
+        </div>
+
+
+      </div>
+
+    <!-- Контент-->
+  <!--  <div class="footer">FOOTER</div> -->
+  </div>
+<script src="js/script.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
