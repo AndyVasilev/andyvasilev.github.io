@@ -2038,14 +2038,7 @@ samp
     vertical-align: top;
     text-decoration: none;
 
-    color: #fff;
     border-radius: 6px;
-    background: #8a7aaf;
-}
-.btn:hover,
-.btn--hover
-{
-    background: #695991;
 }
 .btn-size
 {
@@ -2059,11 +2052,33 @@ samp
 {
     padding: 5px 15px;
 }
+.btn-primary
+{
+    color: #fff;
+    background: #8a7aaf;
+}
+.btn-primary:hover,
+.btn-primary--hover
+{
+    background: #695991;
+}
+.btn-secondary
+{
+    color: #fff;
+    background: #abaeb2;
+}
+.btn-secondary:hover,
+.btn-secondary--hover
+{
+    background: #7b7c81;
+}
 .btn[disabled]
 {
     background: #abaeb2;
 }
 input[type='text'],
+input[type='number'],
+input[type='tel'],
 textarea,
 select,
 input[type='password']
@@ -2111,15 +2126,95 @@ textarea
 }
 textarea::-moz-placeholder
 {
+    transition: all .25s ease;
+
     color: #b6b6b6;
 }
 textarea:-ms-input-placeholder
 {
+    transition: all .25s ease;
+
     color: #b6b6b6;
 }
 textarea::placeholder
 {
+    transition: all .25s ease;
+
     color: #b6b6b6;
+}
+textarea:focus::-moz-placeholder
+{
+    color: #fff;
+}
+textarea:focus:-ms-input-placeholder
+{
+    color: #fff;
+}
+textarea:focus::placeholder
+{
+    color: #fff;
+}
+input[type='text'],
+input[type='number'],
+input[type='tel']
+{
+    font-size: .750em;
+
+    padding: 7px 10px;
+
+    transition: all .25s ease;
+
+    color: #7b7c81;
+    border: 1px solid #d8dde3;
+    border-radius: 6px;
+}
+input[type='text']::-moz-placeholder,
+input[type='number']::-moz-placeholder,
+input[type='tel']::-moz-placeholder
+{
+    transition: all .25s ease;
+
+    color: #b6b6b6;
+}
+input[type='text']:-ms-input-placeholder,
+input[type='number']:-ms-input-placeholder,
+input[type='tel']:-ms-input-placeholder
+{
+    transition: all .25s ease;
+
+    color: #b6b6b6;
+}
+input[type='text']::placeholder,
+input[type='number']::placeholder,
+input[type='tel']::placeholder
+{
+    transition: all .25s ease;
+
+    color: #b6b6b6;
+}
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='tel']:focus
+{
+    border-color: #c2c7cc;
+}
+input[type='text']:focus::-moz-placeholder,
+input[type='number']:focus::-moz-placeholder,
+input[type='tel']:focus::-moz-placeholder
+{
+    color: #fff;
+}
+input[type='text']:focus:-ms-input-placeholder,
+input[type='number']:focus:-ms-input-placeholder,
+input[type='tel']:focus:-ms-input-placeholder
+{
+    color: #fff;
+}
+input[type='text']:focus::placeholder,
+input[type='number']:focus::placeholder,
+input[type='tel']:focus::placeholder
+{
+    color: #fff;
 }
 .select
 {
@@ -2163,20 +2258,11 @@ textarea::placeholder
     border-bottom-width: 0;
     border-left-color: transparent;
 }
-input[type='text']
-{
-    font-size: .750em;
-
-    padding: 7px 10px;
-
-    color: #7b7c81;
-    border: 1px solid #c2c7cc;
-    border-radius: 6px;
-}
 .input_family
 {
     display: -ms-flexbox;
     display: flex;
+    display: none;
 
     margin-top: 20px;
     padding: 20px;
@@ -2186,7 +2272,8 @@ input[type='text']
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-.input_family input[type='text']:nth-child(2n)
+.input_family input[type='text']:nth-child(2n),
+.input_family input[type='number']:nth-child(2n)
 {
     margin: 0 20px;
 }
@@ -2441,6 +2528,14 @@ input[type='text']
 {
     background: #55b74f;
 }
+.status
+{
+    font-size: .750em;
+}
+.status_yellow
+{
+    color: #f7c74c;
+}
 .toolbar
 {
     position: relative;
@@ -2630,6 +2725,62 @@ input[type='text']
     color: #fff;
     background: #8a7aaf;
 }
+.radio-sex
+{
+    width: 60%;
+}
+.radio-sex label
+{
+    font-size: .750em;
+
+    position: relative;
+
+    display: inline-block;
+}
+.radio-sex label:nth-of-type(2n)
+{
+    margin-left: 10px;
+}
+.radio-sex label::before
+{
+    position: relative;
+    top: 3px;
+
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+
+    content: '';
+
+    border: 1px solid #d8dde3;
+    border-radius: 50%;
+}
+.radio-sex label:hover::before
+{
+    border-color: #c2c7cc;
+}
+.radio-sex .radio:checked + label::before
+{
+    border-color: #8a7aaf;
+}
+.radio-sex .radio:checked + label::after
+{
+    position: absolute;
+    top: 7px;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    content: '';
+
+    border-radius: 50%;
+    background: #8a7aaf;
+}
 .document__link
 {
     position: relative;
@@ -2712,8 +2863,8 @@ input[type='text']
 {
     margin: 15px 0;
 }
-.module__content .row:last-child,
-.module__content .row > .row__content:last-child
+.module__content .row:last-of-type,
+.module__content .row > .row__content:last-of-type
 {
     margin-bottom: 0;
 }
@@ -3000,6 +3151,8 @@ input[type='text']
     justify-content: space-between;
 }
 .module-new-contractor .module__content .row input[type='text'],
+.module-new-contractor .module__content .row input[type='number'],
+.module-new-contractor .module__content .row input[type='tel'],
 .module-new-contractor .module__content .row textarea
 {
     font-size: .750em;
@@ -3026,9 +3179,57 @@ input[type='text']
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
 }
+.module-new-contractor .module__content .row .row_header
+{
+    width: 100%;
+}
+.module-new-contractor .module__content .row .row_header h5
+{
+    margin: 0;
+}
+.module-new-contractor .module__content .row .row_content
+{
+    width: 100%;
+    margin-left: 0;
+}
+.module-new-contractor .module__content .row_module
+{
+    margin-top: 30px;
+}
+.module-new-contractor .module__content .row .description
+{
+    font-size: .750em;
+}
 .module-new-contractor .module__content .row-top-xs span
 {
     margin-top: 10px;
+}
+.module-new-contractor .module__content .module-reminder
+{
+    margin-top: 30px;
+
+    grid-column: span 2;
+}
+.module-new-contractor .module__content .module-reminder h5
+{
+    margin-bottom: 0;
+}
+.module-new-contractor .module__content .module-reminder span
+{
+    font-size: .875em;
+}
+.module-new-contractor .module__content .module-reminder input[type='number']
+{
+    width: 40px;
+}
+.module-new-contractor .module__content .module-reminder input::-webkit-outer-spin-button,
+.module-new-contractor .module__content .module-reminder input::-webkit-inner-spin-button
+{
+    margin: 0;
+    /* display: none; <- Crashes Chrome on hover */
+
+    -webkit-appearance: none;
+    /* <-- Apparently some margin are still there even though it's hidden */
 }
 /*=== контекстный слой ===*/
 /*! hidden.less v0.0.1 | MIT License | github.com/paulradzkov/hidden.less */

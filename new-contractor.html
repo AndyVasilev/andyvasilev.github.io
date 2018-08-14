@@ -59,15 +59,18 @@
           <label for="individual">ИП</label>
         </div>
         <div class="select_family">
-          <select class="select" name="type_contractor">
+          <label for="type_contractor"></label>
+          <select id="type_contractor" class="select" name="type_contractor">
             <option value="" hidden>Выберите тип контрагента</option>
-            <option value="Клиент">Клиент</option>
-            <option value="Исполнитель">Исполнитель</option>
+            <option value="client">Клиент</option>
+            <option value="provider">Поставщик</option>
+            <option value="agent">Агент</option>
+            <option value="executor">Исполнитель</option>
           </select>
         </div>
-        <div class="module module_primary input_family">
+        <div id="input_family" class="module module_primary input_family">
           <input type="text" name="" value="" placeholder="Выполняемые работы">
-          <input type="text" name="" value="" placeholder="Кол-во человек в бригаде">
+          <input type="number" name="" value="" placeholder="Кол-во человек в бригаде">
           <input type="text" name="" value="" placeholder="Производительность">
         </div>
       </div>
@@ -75,7 +78,7 @@
         <!-- Модуль -->
         <div class="module module-new-contractor module_primary">
           <div class="module__header">
-            <input type="text" name="" value="" placeholder="Введите ИНН или ОГРН">
+            <input type="number" name="" value="" placeholder="Введите ИНН или ОГРН">
           </div>
           <div class="module__content rows-2">
             <!-- Левая -->
@@ -142,6 +145,27 @@
                   </div>
                 </div>
               </div>
+
+              <div class="row row-top-xs row_module">
+                <div class="row row-middle-xs row_header">
+                  <h5>Расчетные счета</h5>
+                  <a class="btn btn-primary btn-auto" href="">+ Добавить расчетный счет</a>
+                </div>
+                <div class="row row-middle-xs row_content">
+                  <span>Банк</span>
+                  <input type="text" name="" value="" placeholder="введите БИК банка или название">
+                </div>
+                <div class="row row-middle-xs row_content">
+                  <span>Номер счета</span>
+                  <input type="number" name="" value="">
+                </div>
+                <div class="row row-middle-xs row_content">
+                  <span>Комментарий</span>
+                    <input type="text" name="" value="" placeholder="для себя">
+                </div>
+                <span class="description">Этот счет используется по умолчанию</span>
+              </div>
+
             </div>
             <!-- Правая -->
             <div class="module__content_right">
@@ -160,9 +184,11 @@
               </div>
               <div class="row row-middle-xs">
                 <span>Пол</span>
-                <div class="row-start-xs">
-                  <input type="radio" name="sex" value="Муж" checked>
-                  <input type="radio" name="sex" value="Жен">
+                <div class="radio-sex row-start-xs">
+                  <input id="sex-man" class="radio" type="radio" name="sex" value="man" checked>
+                  <label for="sex-man">Муж</label>
+                  <input id="sex-woman" class="radio" type="radio" name="sex" value="woman">
+                  <label for="sex-woman">Жен</label>
                 </div>
               </div>
               <div class="row row-middle-xs">
@@ -175,7 +201,7 @@
               </div>
               <div class="row row-middle-xs">
                 <span>Телефон</span>
-                <input type="text" name="" value="">
+                <input class="tel-field" type="tel" name="" value="">
               </div>
               <div class="row row-middle-xs">
                 <span>Электронная почта</span>
@@ -186,13 +212,25 @@
                 <textarea name="" rows="4" placeholder=""></textarea>
               </div>
             </div>
+
+            <div class="row module-reminder">
+              <h5>Напоминание об оплате счетов</h5>
+              <div>
+                <input type="checkbox">
+                <span>Напомнить этому контрагенту об оплате всех новых счетов через <input type="number"> рабочих дней после создания</span>
+                <br>
+                <span class="status status_yellow">Если статус счёта сменится на «Оплачен», клиент не получит напоминание</span>
+              </div>
+            </div>
+
           </div>
+
+
           <div class="module__footer module__footer_border">
-            <a class="btn btn-auto" href="">Сохранить</a>
-            <a class="btn btn-auto" href="">Отмена</a>
+            <a class="btn btn-primary btn-auto" href="">Сохранить</a>
+            <a class="btn btn-secondary btn-auto" href="">Отмена</a>
           </div>
         </div>
-
 
       </div>
 
